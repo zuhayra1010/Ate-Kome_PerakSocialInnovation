@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 470 140" role="img" aria-label="Moh Siswa! logo placeholder">
+  <!-- PLACEHOLDER: replace this whole file with your own logo.svg (keep the file name logo.svg) -->
+  <rect x="8" y="22" width="96" height="96" rx="30" fill="#cdbdff"/>
+  <path d="M56 98c-4 0-30-17-30-40 0-11 8-19 17-19 5 0 10 3 13 7 3-4 8-7 13-7 9 0 17 8 17 19 0 23-26 40-30 40z" fill="#fff"/>
+  <circle cx="56" cy="58" r="9" fill="#ffd36e"/>
+  <text x="120" y="82" font-family="system-ui, sans-serif" font-size="46" font-weight="800" fill="#35246f">Moh Siswa!</text>
+  <text x="122" y="108" font-family="system-ui, sans-serif" font-size="15" fill="#7a7391">Volunteer · Sponsor · Work · Rewards</text>
+</svg>

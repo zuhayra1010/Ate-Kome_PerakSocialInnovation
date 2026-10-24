@@ -1,0 +1,10 @@
+{
+  "name": "Moh Siswa!",
+  "short_name": "Moh Siswa",
+  "description": "Sukarelawan, tajaan, kerja sambilan dan ganjaran untuk siswa IPT Perak.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}
