@@ -1,55 +1,40 @@
-/* =====================================================================
-   MOH SISWA! THEME  -  the ONE file to edit to change how the app looks
-   Change a value, save, and the whole app updates. No other file needed.
-   ===================================================================== */
+
+  /* ===================================================================== */
 :root {
   color-scheme: light;
-
   /* ---------- FONT ----------
      System font by default. To use a Google Font (e.g. Poppins):
      1) open app/layout.js, 2) follow the "FONT" comment there,
      3) then put:  --font: 'Poppins', system-ui, sans-serif;  */
-  --font: ui-rounded, 'SF Pro Rounded', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font: ui-rounded, 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   --font-size: 15px;          /* normal text size */
   --heading-weight: 800;      /* 600 = lighter headings, 800 = bold */
-
-  /* ---------- PAGE ---------- */
-  --bg: #ffffff;              /* page background (white) */
-  --ink: #2b2540;             /* main text colour */
-  --muted: #7a7391;           /* grey helper text */
-  --line: #ece6fa;            /* thin borders */
-
-  /* ---------- PASTEL BRAND COLOURS ----------
-     --primary        = button background (pastel lavender)
-     --primary-ink    = text ON a primary button (keep it dark so it is readable)
-     --primary-strong = darker purple for links, active tab, progress ring */
-  --primary: #cdbdff;
-  --primary-ink: #35246f;
-  --primary-strong: #7357e8;
-  --primary-soft: #f2edff;    /* very light purple chips / soft buttons */
-
-  --accent: #ffe39a;          /* pastel yellow: the "+60 mata" tag */
-  --accent-ink: #5a4300;
-
-  /* ---------- STATUS COLOURS (pastel) ---------- */
-  --good: #2b9a6e;  --good-soft: #dcf7ea;
-  --bad:  #d94d68;  --bad-soft:  #ffe5ec;
-  --warn: #946500;  --warn-soft: #fff3d1;
-
-  /* ---------- CARDS ---------- */
-  --card-bg: #ffffff;
-  --card-border: #efe9fc;
-  --card-radius: 22px;        /* 0 = square corners, 28px = very round */
-  --card-padding: 15px;
-  --card-shadow: 0 1px 2px rgba(115, 87, 232, .05), 0 10px 28px rgba(115, 87, 232, .09);
-  --surface-2: #f7f3ff;       /* soft fill inside cards (chips, progress track) */
-
-  /* ---------- BIG POINTS CARD (home + wallet) ---------- */
-  --hero-bg: linear-gradient(145deg, #e6dcff 0%, #ffdcee 58%, #ffe9d2 100%);
-  --hero-ink: #2b2540;
-  --hero-muted: #6b6188;
-  --ring: #7357e8;
-  --ring-track: rgba(115, 87, 232, .16);
+ --bg: #f8f7f3; /* Warm, creamy off-white */
+  --surface: #ffffff; /* Clean white for cards */
+  --surface-2: #efeadb; /* Slightly darker cream for segments/chips */
+  
+  /* Text & Lines */
+  --ink: #1a1914; /* Deep, warm black/charcoal */
+  --muted: #737063; /* Warm gray for muted text */
+  --line: #e3dec9; /* Soft border color */
+  
+  /* Primary - Pastel Yellow */
+  --primary: #eadf7f; 
+  --primary-ink: #1a1914; /* Dark text for yellow buttons */
+  --primary-soft: #f6f3e1; /* Very light yellow for soft tags */
+  
+  /* Accents - Soft Olive */
+  --accent: #aeb588; 
+  --accent-ink: #1e2111;
+  
+  /* Status Colors (Muted to fit the pastel vibe) */
+  --good: #5f9e7d; --good-soft: #e3f0e9; 
+  --bad: #cf6b6b; --bad-soft: #fae8e8; 
+  --warn-soft: #fcf1d4; --warn: #967011;
+  
+  /* Elevation & Radius */
+  --shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  --r: 18px;
 
   /* ---------- BUTTONS & INPUTS ---------- */
   --btn-radius: 16px;

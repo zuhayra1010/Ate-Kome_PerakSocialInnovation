@@ -16,8 +16,8 @@ export const GET = handle(async (req) => {
   ]);
   const st = await computeStats(user);
   const have = new Set(badgeRows.map((b) => b.key));
-  const badges = badgeRows.map((b) => ({ ...b, emoji: badgeDef(b.key)?.emoji || '🏅', desc: badgeDef(b.key)?.desc || '' }));
-  const locked = BADGE_DEFS.filter((d) => !have.has(d.key)).map(({ key, title, emoji, desc }) => ({ key, title, emoji, desc }));
+  const badges = badgeRows.map((b) => ({ ...b, icon: badgeDef(b.key)?.icon || '🏅', desc: badgeDef(b.key)?.desc || '' }));
+  const locked = BADGE_DEFS.filter((d) => !have.has(d.key)).map(({ key, title, icon, desc }) => ({ key, title, icon, desc }));
   const mine = events
     .filter((e) => e.participants.some((p) => p.userId === user.id))
     .map((e) => ({ id: e.id, title: e.title, startsAt: e.startsAt, status: e.participants.find((p) => p.userId === user.id).status, district: e.district }));

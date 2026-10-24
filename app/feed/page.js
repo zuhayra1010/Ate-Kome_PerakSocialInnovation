@@ -21,7 +21,7 @@ function Feed() {
         <input className="in" type="search" placeholder="Cari aktiviti atau penganjur" value={q} onChange={(e) => setQ(e.target.value)} aria-label="Cari" />
         <div className="scroll-x" role="group" aria-label="Kategori">
           <button className={'chip' + (!cat ? ' on' : '')} onClick={() => setCat('')}>Semua</button>
-          {Object.entries(CATEGORIES).map(([k, v]) => <button key={k} className={'chip' + (cat === k ? ' on' : '')} onClick={() => setCat(cat === k ? '' : k)}>{v.emoji} {v.label}</button>)}
+          {Object.entries(CATEGORIES).map(([k, v]) => <button key={k} className={'chip' + (cat === k ? ' on' : '')} onClick={() => setCat(cat === k ? '' : k)}>{v.icon} {v.label}</button>)}
         </div>
         <div className="row">
           <select className="in grow" value={district} onChange={(e) => setDistrict(e.target.value)} aria-label="Daerah"><option value="">Semua daerah</option>{DISTRICTS.map((d) => <option key={d}>{d}</option>)}</select>

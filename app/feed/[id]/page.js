@@ -42,7 +42,7 @@ export default function EventDetail() {
   if (ev.loading) return <div style={{ paddingTop: 40 }}><Skeletons /></div>;
   if (ev.error) return <div style={{ paddingTop: 40 }}><ErrorBox msg={ev.error} retry={ev.reload} /></div>;
   const e = ev.data.event;
-  const cat = CATEGORIES[e.category] || { label: e.category, emoji: '✨' };
+  const cat = CATEGORIES[e.category] || { label: e.category, icon: '✨' };
   const refresh = () => Promise.all([ev.reload(), rides.reload(), me.reload()]);
 
   const act = async (fn, okMsg) => {
@@ -65,7 +65,7 @@ export default function EventDetail() {
       <header className="page-head"><button className="btn ghost sm" onClick={() => router.back()} aria-label="Kembali">← Kembali</button><span className="tag pts">+{e.points} mata</span></header>
       <div className="stack">
         <div className="card stack" style={{ gap: 8 }}>
-          <span className="chip" style={{ width: 'fit-content' }}>{cat.emoji} {cat.label}</span>
+          <span className="chip" style={{ width: 'fit-content' }}>{cat.icon} {cat.label}</span>
           <h1 style={{ fontSize: 22, letterSpacing: '-.02em' }}>{e.title}</h1>
           <div className="meta"><span>📍 {e.venue ? `${e.venue}, ` : ''}{e.district}</span><span>🗓 {fmtDate(e.startsAt)}, {fmtTime(e.startsAt)}</span><span>⏱ {e.durationHrs} jam</span></div>
           <p>{e.description}</p>
@@ -135,7 +135,7 @@ export default function EventDetail() {
             <div className="plus">+{win.total}</div>
             <h2>Perak Points masuk! 🎉</h2>
             <p className="sub" style={{ margin: '6px 0' }}>{win.points} mata aktiviti{win.bonuses.map((b) => ` · +${b.points} ${b.label}`).join('')}</p>
-            {win.newBadges.map((b) => <p key={b.key} style={{ marginTop: 8 }}><span className="tag good" style={{ fontSize: 14 }}>{b.emoji} Lencana baharu: {b.title}</span></p>)}
+            {win.newBadges.map((b) => <p key={b.key} style={{ marginTop: 8 }}><span className="tag good" style={{ fontSize: 14 }}>{b.icon} Lencana baharu: {b.title}</span></p>)}
             <button className="btn block" style={{ marginTop: 16 }} onClick={() => setWin(null)}>Hebat!</button>
           </div>
         </div>

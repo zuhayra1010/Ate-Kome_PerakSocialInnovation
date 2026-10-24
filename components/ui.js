@@ -62,12 +62,12 @@ export const ErrorBox = ({ msg, retry }) => (
 );
 
 export function EventCard({ ev, showReasons = true }) {
-  const cat = CATEGORIES[ev.category] || { label: ev.category, emoji: '✨' };
+  const cat = CATEGORIES[ev.category] || { label: ev.category, icon: '✨' };
   const pct = Math.round((ev.filled / ev.slots) * 100);
   return (
     <Link href={`/feed/${ev.id}`} className="card ev" style={{ position: 'relative' }}>
       <div className="row between">
-        <span className="chip">{cat.emoji} {cat.label}</span>
+        <span className="chip">{cat.icon} {cat.label}</span>
         <span className="row" style={{ gap: 6 }}>{ev.screening?.enabled && !ev.myStatus && !ev.isOwner && <span className="tag">📝 Saringan</span>}<span className="tag pts">+{ev.points} mata</span></span>
       </div>
       <h3>{ev.title}</h3>

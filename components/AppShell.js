@@ -8,11 +8,11 @@ const ToastCtx = createContext(() => {});
 export const useToast = () => useContext(ToastCtx);
 
 const TABS = [
-  { href: '/', icon: '🏠', label: 'Utama' },
-  { href: '/feed', icon: '🌿', label: 'Aktiviti' },
-  { href: '/tumpang', icon: '🚗', label: 'Tumpang' },
-  { href: '/gigs', icon: '💼', label: 'Peluang', also: ['/sponsors'] },
-  { href: '/profile', icon: '👤', label: 'Profil' },
+  { href: '/', icon: '/icons/utama.svg', label: 'Utama' },
+  { href: '/feed', icon: '/icons/aktiviti.svg', label: 'Aktiviti' },
+  { href: '/tumpang', icon: '/icons/tumpang.svg', label: 'Tumpang' },
+  { href: '/gigs', icon: '/icons/utama.svg', label: 'Peluang', also: ['/sponsors'] },
+  { href: '/profile', icon: '/icons/profil.svg', label: 'Profil' },
 ];
 
 export default function AppShell({ children }) {
@@ -45,7 +45,11 @@ export default function AppShell({ children }) {
         <nav className="nav" aria-label="Menu utama">
           {TABS.map((t) => (
             <Link key={t.href} href={t.href} className={active(t) ? 'on' : ''} aria-current={active(t) ? 'page' : undefined}>
-              <span aria-hidden>{t.icon}</span>
+              <span aria-hidden>
+  {t.icon.startsWith('/')
+    ? <img src={t.icon} alt="" width={24} height={24} />
+    : t.icon}
+</span>
               {t.label}
             </Link>
           ))}

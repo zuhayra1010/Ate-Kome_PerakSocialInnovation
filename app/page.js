@@ -19,7 +19,7 @@ export default function Home() {
     <>
       <header className="page-head">
         <div>
-          <p className="sub">Salam, siswa 👋</p>
+          <p className="sub">Salam, siswa!</p>
           <h1>{user.name.split(' ')[0]}</h1>
         </div>
         <Link href="/profile" className="tag" style={{ background: level.color, color: 'var(--ink)', padding: '6px 12px', fontSize: 13 }}>{level.name}</Link>
@@ -30,7 +30,7 @@ export default function Home() {
           <div>
             <p className="sub">Dompet Perak Point</p>
             <p className="big">{pts}</p>
-            <p className="sub" style={{ marginTop: 6 }}>{level.next ? `${level.toNext} mata lagi ke ${level.next.name}` : 'Tahap tertinggi 🎉'}</p>
+            <p className="sub" style={{ marginTop: 6 }}>{level.next ? `${level.toNext} mata lagi ke ${level.next.name}` : 'Tahap tertinggi '}</p>
           </div>
           <Ring pct={level.progress} size={92}><b style={{ fontSize: 17 }}>{level.progress}%</b></Ring>
         </div>

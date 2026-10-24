@@ -61,8 +61,8 @@ export default function Profile() {
 
       <div className="sec"><h2>🏅 Lencana kemahiran</h2></div>
       <div className="badge-grid">
-        {badges.map((b) => <div key={b.key} className="badge"><span className="em">{b.emoji}</span>{b.title}<p className="sub" style={{ fontWeight: 500 }}>{b.verifiedByAgency ? '✔ Disahkan agensi' : 'Menunggu pengesahan'}</p></div>)}
-        {locked.map((b) => <div key={b.key} className="badge locked" title={b.desc}><span className="em">{b.emoji}</span>{b.title}</div>)}
+        {badges.map((b) => <div key={b.key} className="badge"><span className="em">{b.icon}</span>{b.title}<p className="sub" style={{ fontWeight: 500 }}>{b.verifiedByAgency ? '✔ Disahkan agensi' : 'Menunggu pengesahan'}</p></div>)}
+        {locked.map((b) => <div key={b.key} className="badge locked" title={b.desc}><span className="em">{b.icon}</span>{b.title}</div>)}
       </div>
       {locked.length > 0 && <p className="sub" style={{ marginTop: 8 }}>Sentuh lencana kelabu untuk lihat syarat. Lencana disahkan agensi akan ditanda apabila rakan kongsi rasmi mengesahkannya.</p>}
 
@@ -74,7 +74,7 @@ export default function Profile() {
         {badges.length > 0 && (
           <div className="stack" style={{ gap: 6 }}>
             <b>Tambah lencana ke LinkedIn</b>
-            {badges.map((b) => <a key={b.key} className="btn ghost sm" href={linkedinAddUrl(b.title, b.earnedAt)} target="_blank" rel="noopener noreferrer">{b.emoji} {b.title} → LinkedIn</a>)}
+            {badges.map((b) => <a key={b.key} className="btn ghost sm" href={linkedinAddUrl(b.title, b.earnedAt)} target="_blank" rel="noopener noreferrer">{b.icon} {b.title} → LinkedIn</a>)}
             <p className="sub">Borang “Licences &amp; certifications” LinkedIn dibuka siap diisi. Anda semak dan simpan sendiri.</p>
           </div>
         )}

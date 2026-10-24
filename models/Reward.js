@@ -6,7 +6,7 @@ const RewardSchema = new mongoose.Schema(
     description: { type: String, default: '' },
     cost: { type: Number, required: true },
     provider: { type: String, default: '' },
-    emoji: { type: String, default: '🎁' },
+    icon: { type: String, default: '' },
     stock: { type: Number, default: -1 }, // -1 = unlimited
   },
   { timestamps: true }

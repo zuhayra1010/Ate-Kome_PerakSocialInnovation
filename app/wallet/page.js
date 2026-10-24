@@ -41,7 +41,9 @@ export default function Wallet() {
           const can = w.data.points >= r.cost && r.stock !== 0;
           return (
             <div key={r.id} className="card row">
-              <span style={{ fontSize: 32 }} aria-hidden>{r.emoji}</span>
+              {r.icon
+                  ? <img src={r.icon} alt="" width={40} height={40} style={{ objectFit: 'contain' }} />
+                  : <span style={{ fontSize: 32 }} aria-hidden>{r.emoji}</span>}
               <div className="grow"><b>{r.title}</b><p className="sub">{r.description}</p><p className="sub">{r.provider}</p></div>
               <button className={'btn sm' + (can ? '' : ' ghost')} disabled={!can} onClick={() => setPick(r)}>{r.cost} mata</button>
             </div>

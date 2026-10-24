@@ -5,7 +5,7 @@ import { api, setUid } from '@/lib/client';
 import { COURSES, DISTRICTS, TAGS, UNIVERSITIES } from '@/lib/constants';
 import { useToast } from '@/components/AppShell';
 
-// Put your own logo at public/logo.svg (same file name) and it shows up here automatically.
+// Put logo here
 const Logo = ({ w = 240 }) => <img src="/logo.svg" alt="Moh Siswa!" style={{ width: w, maxWidth: '80%', height: 'auto' }} />;
 
 export default function Welcome() {
@@ -34,8 +34,8 @@ export default function Welcome() {
       <div style={{ minHeight: '100dvh', display: 'grid', gridTemplateRows: '1fr auto', textAlign: 'center', padding: 'env(safe-area-inset-top) 4px calc(28px + env(safe-area-inset-bottom))' }}>
         <div style={{ display: 'grid', placeItems: 'center', alignContent: 'center', gap: 18 }}>
           <Logo w={280} />
-          <h1 style={{ fontSize: 26, letterSpacing: '-.02em', fontWeight: 'var(--heading-weight)' }}>Jom jadi sukarelawan!</h1>
-          <p className="sub" style={{ maxWidth: 300, fontSize: 15 }}>Sukarelawan, tajaan, kerja sambilan dan ganjaran negeri untuk siswa IPT Perak. Satu app, satu portfolio.</p>
+          <h1 style={{ fontSize: 26, letterSpacing: '-.02em', fontWeight: 'var(--heading-weight)' }}>Moh jadi sukarelawan!</h1>
+          <p className="sub" style={{ maxWidth: 300, fontSize: 15 }}>Sukarelawan, tajaan, kerja sambilan dan ganjaran negeri untuk siswa IPT Perak.</p>
         </div>
         <div className="stack">
           <button className="btn block" onClick={() => setStep('form')}>Mari Mulakan</button>
@@ -63,10 +63,10 @@ export default function Welcome() {
           <label className="f">Bidang pengajian
             <select className="in" value={f.course} onChange={(e) => set('course', e.target.value)}>{Object.keys(COURSES).map((c) => <option key={c}>{c}</option>)}</select>
           </label>
-          <label className="f">Daerah tempat tinggal
+          <label className="f">Daerah
             <select className="in" value={f.district} onChange={(e) => set('district', e.target.value)}><option value="">Pilih daerah</option>{DISTRICTS.map((d) => <option key={d}>{d}</option>)}</select>
           </label>
-          <div className="f"><span>Kemahiran (untuk Smart Match)</span>
+          <div className="f"><span>Kemahiran</span>
             <div className="row wrap" style={{ marginTop: 6 }}>
               {Object.entries(TAGS).map(([k, v]) => <button type="button" key={k} className={'chip' + (f.skills.includes(k) ? ' on' : '')} onClick={() => toggle(k)} aria-pressed={f.skills.includes(k)}>{v}</button>)}
             </div>
