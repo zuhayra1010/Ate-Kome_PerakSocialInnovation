@@ -86,8 +86,10 @@ export function EventCard({ ev, showReasons = true, index = 0 }) {  const cat = 
         <span className="row" style={{ gap: 6 }}>{ev.screening?.enabled && !ev.myStatus && !ev.isOwner && <span className="tag">📝 Saringan</span>}<span className="tag pts">+{ev.points} mata</span></span>
       </div>
       <h3>{ev.title}</h3>
+      <div className="tag duration" title="tempoh">{ev.durationHrs} jam
+      </div>
       <div className="meta">
-        <span>📍 {ev.district}</span><span>🗓 {fmtDate(ev.startsAt)}, {fmtTime(ev.startsAt)}</span><span>⏱ {ev.durationHrs} jam</span>
+        <span>{ev.district} | </span><span>{fmtDate(ev.startsAt)}</span><span> | {fmtTime(ev.startsAt)}</span>
       </div>
       <div className="row wrap" style={{ margin: '8px 0 6px' }}>
         <span className="sub">{ev.organizer.name}</span>

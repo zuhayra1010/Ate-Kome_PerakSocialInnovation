@@ -133,7 +133,7 @@ export default function EventDetail() {
         <div className="pop" onClick={() => setWin(null)}>
           <div onClick={(x) => x.stopPropagation()}>
             <div className="plus">+{win.total}</div>
-            <h2>Perak Points masuk! 🎉</h2>
+            <h2>Perak Points masuk!</h2>
             <p className="sub" style={{ margin: '6px 0' }}>{win.points} mata aktiviti{win.bonuses.map((b) => ` · +${b.points} ${b.label}`).join('')}</p>
             {win.newBadges.map((b) => <p key={b.key} style={{ marginTop: 8 }}><span className="tag good" style={{ fontSize: 14 }}>{b.icon} Lencana baharu: {b.title}</span></p>)}
             <button className="btn block" style={{ marginTop: 16 }} onClick={() => setWin(null)}>Hebat!</button>

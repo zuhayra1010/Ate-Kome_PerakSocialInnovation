@@ -26,10 +26,6 @@ function Feed() {
         </div>
         <div className="row">
           <select className="in grow" value={district} onChange={(e) => setDistrict(e.target.value)} aria-label="Daerah"><option value="">Semua daerah</option>{DISTRICTS.map((d) => <option key={d}>{d}</option>)}</select>
-          <div className="seg" style={{ width: 170 }}>
-            <button className={sort === 'date' ? 'on' : ''} onClick={() => setSort('date')}>Tarikh</button>
-            <button className={sort === 'match' ? 'on' : ''} onClick={() => setSort('match')}>✨ Padan</button>
-          </div>
         </div>
         {loading && !data ? <Skeletons /> : error ? <ErrorBox msg={error} retry={reload} /> : data.events.length === 0 ? <Empty icon="/icons/search.svg">Tiada aktiviti sepadan. Cuba tukar penapis.</Empty> : data.events.map((e) => <EventCard key={e.id} ev={e} />)}
       </div>

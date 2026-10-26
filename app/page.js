@@ -1,4 +1,5 @@
 'use client';
+
 import Link from 'next/link';
 import { useApi, useCountUp } from '@/lib/client';
 import { EventCard, ErrorBox, Ring, Skeletons } from '@/components/ui';
@@ -19,11 +20,21 @@ export default function Home() {
     <>
       <header className="page-head">
         <div>
-          <p className="sub">Salam, siswa!</p>
-          <h1>{user.name.split(' ')[0]}</h1>
-        </div>
-        <Link href="/profile" className="tag" style={{ background: level.color, color: 'var(--ink)', padding: '6px 12px', fontSize: 13 }}>{level.name}</Link>
-      </header>
+<p className="sub">Salam, siswa!</p>
+<h1>{user.name.split(' ')[0]}</h1>
+<span className="button flex items-center gap-1"> 
+  <img src="/icons/streak.svg" alt="Ikon Streak" className="w-4 h-4" />
+  {user.streak} minggu berturut
+</span>
+</div>
+<Link href="/profile" title={level.name}>
+  <img 
+    src={level.icon} 
+    alt={level.name} 
+    className="w-12 h-12 hover:scale-105 transition-transform" 
+  />
+</Link>
+</header>
 
       <section className="card hero" aria-label="Dompet Perak Point">
         <div className="row between">
@@ -32,17 +43,19 @@ export default function Home() {
             <p className="big">{pts}</p>
             <p className="sub" style={{ marginTop: 6 }}>{level.next ? `${level.toNext} mata lagi ke ${level.next.name}` : 'Tahap tertinggi '}</p>
           </div>
-          <Ring pct={level.progress} size={92}><b style={{ fontSize: 17 }}>{level.progress}%</b></Ring>
+<Ring pct={level.progress} size={90} stroke={20} color="#eadd72" track="#f3f4f6">
+  <b style={{ fontSize: 14 }}>{level.progress}%</b>
+</Ring>
         </div>
         <div className="row" style={{ marginTop: 14, position: 'relative', zIndex: 1 }}>
-          <Link href="/wallet" className="btn white sm">Tebus ganjaran</Link>
-          <span className="chip glass">🔥 {user.streak} minggu berturut</span>
+          <Link href="/wallet" className="btn">Tebus ganjaran</Link>
+        
         </div>
       </section>
 
       <section className="card" style={{ marginTop: 12 }}>
         <div className="row">
-          <span style={{ fontSize: 26 }} aria-hidden>{weekDone ? '✅' : '🎯'}</span>
+          <span style={{ fontSize: 26 }} aria-hidden>{weekDone ? '✅' : ''}</span>
           <div className="grow">
             <b>Cabaran minggu ini</b>
             <p className="sub">{weekDone ? 'Siap! Streak anda selamat minggu ini.' : 'Sertai 1 aktiviti minggu ini untuk kekalkan streak dan dapat mata bonus.'}</p>
@@ -73,7 +86,7 @@ export default function Home() {
         </section>
       )}
 
-      <div className="sec"><h2>✨ Dipadankan untuk anda</h2><Link href="/feed?sort=match">Lihat semua</Link></div>
+      <div className="sec"><h2> Dipadankan untuk anda</h2><Link href="/feed?sort=match">Lihat semua</Link></div>
       {matches.loading ? <Skeletons n={2} /> : (
         <div className="stack">
           {matches.data?.events.slice(0, 3).map((e) => <EventCard key={e.id} ev={e} />)}

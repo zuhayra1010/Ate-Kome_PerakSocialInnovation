@@ -6,8 +6,8 @@ export function OppTabs() {
   const p = usePathname();
   return (
     <nav className="seg" style={{ marginBottom: 14 }} aria-label="Peluang">
-      <Link href="/gigs" className={p === '/gigs' ? 'on' : ''}>💼 Kerja sambilan</Link>
-      <Link href="/sponsors" className={p === '/sponsors' ? 'on' : ''}>🤝 Tajaan</Link>
+      <Link href="/gigs" className={p === '/gigs' ? 'on' : ''}>Kerja sambilan</Link>
+      <Link href="/sponsors" className={p === '/sponsors' ? 'on' : ''}>Tajaan</Link>
     </nav>
   );
 }

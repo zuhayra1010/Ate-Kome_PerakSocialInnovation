@@ -68,6 +68,7 @@ button.chip.on { background: var(--primary); color: var(--primary-ink); }
 .tag.good { background: var(--good-soft); color: var(--good); }
 .tag.warn { background: var(--warn-soft); color: var(--warn); }
 .tag.pts { background: var(--accent); color: var(--accent-ink); }
+.tag.duration{background-color: #f3f4f6;color: #4b5563; }
 .scroll-x { display: flex; gap: 8px; overflow-x: auto; margin: 0 -16px; padding: 2px 16px 8px; scrollbar-width: none; scroll-snap-type: x proximity; }
 .scroll-x::-webkit-scrollbar { display: none; }
 .scroll-x > * { flex: none; scroll-snap-align: start; }
