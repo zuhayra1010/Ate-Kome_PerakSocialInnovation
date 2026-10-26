@@ -87,7 +87,7 @@ export default function Organise() {
         </form>
       )}
       <div className="sec"><h2>Program saya</h2></div>
-      {events.loading ? <Skeletons n={2} /> : mine.length === 0 ? <Empty icon="📣">Belum ada program. Tekan “+ Baru” untuk mula.</Empty> : (
+      {events.loading ? <Skeletons n={2} /> : mine.length === 0 ? <Empty icon="/icons/anjur.svg">Belum ada program. Tekan “+ Baru” untuk mula.</Empty> : (
         <div className="stack">{mine.map((e) => (
           <Link key={e.id} href={`/feed/${e.id}`} className="card stack" style={{ gap: 4 }}>
             <b>{e.title}</b><p className="sub">{fmtDateTime(e.startsAt)} · {e.filled}/{e.slots} sertai · {e.checkedIn} hadir</p>

@@ -83,27 +83,51 @@ export default function Home() {
 
       {matches.data?.gigs.length > 0 && (
         <>
-          <div className="sec"><h2>💼 Kerja sambilan sesuai</h2><Link href="/gigs">Semua</Link></div>
+          <div className="sec flex items-center justify-between">
+  {/* Tambah flex, items-center dan gap-2 supaya ikon sejajar dengan teks */}
+  <h2 className="flex items-center gap-2">
+    Kerja sambilan sesuai
+  </h2>
+  
+  <Link href="/gigs">Semua</Link>
+</div>
           <div className="scroll-x">
             {matches.data.gigs.map((g) => (
               <Link key={g.id} href="/gigs" className="card" style={{ width: 230 }}>
                 <b>{g.title}</b>
                 <p className="sub">{g.employer}</p>
                 <p style={{ margin: '6px 0' }}><span className="tag pts">RM{g.payRate}/{g.payUnit === 'hour' ? 'jam' : g.payUnit === 'day' ? 'hari' : 'tugas'}</span></p>
-                <p className="reason">✨ {g.match.reasons[0]}</p>
+                <p className="reason"> {g.match.reasons[0]}</p>
               </Link>
             ))}
           </div>
         </>
       )}
 
-      <div className="sec"><h2>Pintasan</h2></div>
-      <div className="row wrap">
-        <Link href="/organise" className="chip">📣 Anjur program</Link>
-        <Link href="/sponsors" className="chip">🤝 Cari tajaan</Link>
-        <Link href="/tumpang" className="chip">🚗 Moh Tumpang!</Link>
-        <Link href="/profile" className="chip">📄 Resume</Link>
-      </div>
+     <div className="sec"><h2>Pintasan</h2></div>
+<div className="row wrap">
+  {/* Tambah 'flex items-center gap-2' supaya ikon dan teks sejajar di tengah */}
+  <Link href="/organise" className="chip flex items-center gap-2">
+    <img src="/icons/anjur.svg" alt="Anjur" className="w-5 h-5" />
+    Anjur program
+  </Link>
+  
+  <Link href="/sponsors" className="chip flex items-center gap-2">
+    {/* Anda boleh tukar 'kolaborasi.svg' kepada ikon tajaan yang sebenar */}
+    <img src="/icons/kolaborasi.svg" alt="Tajaan" className="w-5 h-5" />
+    Cari tajaan
+  </Link>
+  
+  <Link href="/tumpang" className="chip flex items-center gap-2">
+    <img src="/icons/tumpang.svg" alt="Tumpang" className="w-5 h-5" />
+    Moh Tumpang!
+  </Link>
+  
+  <Link href="/profile" className="chip flex items-center gap-2">
+    <img src="/icons/resume.svg" alt="Resume" className="w-5 h-5" />
+    Resume
+  </Link>
+</div>
     </>
   );
 }

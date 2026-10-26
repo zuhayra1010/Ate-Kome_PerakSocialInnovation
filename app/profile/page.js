@@ -59,14 +59,15 @@ export default function Profile() {
         {[[user.lifetimePoints, 'Jumlah mata'], [stats.checkins, 'Aktiviti'], [user.streak, 'Minggu streak']].map(([n, l]) => <div key={l} className="card grow" style={{ textAlign: 'center', padding: 12 }}><b style={{ fontSize: 22 }}>{n}</b><p className="sub">{l}</p></div>)}
       </div>
 
-      <div className="sec"><h2>🏅 Lencana kemahiran</h2></div>
+      <div className="sec"><h2>Lencana kemahiran</h2></div>
       <div className="badge-grid">
         {badges.map((b) => <div key={b.key} className="badge"><span className="em">{b.icon}</span>{b.title}<p className="sub" style={{ fontWeight: 500 }}>{b.verifiedByAgency ? '✔ Disahkan agensi' : 'Menunggu pengesahan'}</p></div>)}
         {locked.map((b) => <div key={b.key} className="badge locked" title={b.desc}><span className="em">{b.icon}</span>{b.title}</div>)}
       </div>
       {locked.length > 0 && <p className="sub" style={{ marginTop: 8 }}>Sentuh lencana kelabu untuk lihat syarat. Lencana disahkan agensi akan ditanda apabila rakan kongsi rasmi mengesahkannya.</p>}
 
-      <div className="sec"><h2>📄 Resume pintar</h2></div>
+      <div className="sec"><h2 className="flex items-center gap-2">
+        <img src="/icons/resume.svg" alt="Ikon Resume" className="w-6 h-6" /> Resume Automatik </h2></div>
       <div className="card stack">
         <p className="sub">Rekod kokurikulum, lencana dan penarafan anda dalam satu PDF.</p>
         <button className="btn block" disabled={busy} onClick={() => pdf('/resume', 'moh-siswa-resume.pdf')}>Muat turun resume (PDF)</button>

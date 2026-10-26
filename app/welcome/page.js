@@ -1,4 +1,6 @@
 'use client';
+
+import { App, Page, Navbar, Block } from 'konsta/react';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { api, setUid } from '@/lib/client';
@@ -13,9 +15,15 @@ export default function Welcome() {
   const toast = useToast();
   const [step, setStep] = useState('splash'); // splash -> form
   const [tab, setTab] = useState('register');
+  const [login, setLogin] = useState({ email: '', password: '' });
+const submitLogin = async (e) => {
+  e.preventDefault(); setBusy(true);
+  try { await api('/auth/login', { method: 'POST', body: login }); router.replace('/'); }
+  catch (err) { toast(err.message, true); setBusy(false); }
+};
   const [demo, setDemo] = useState([]);
   const [busy, setBusy] = useState(false);
-  const [f, setF] = useState({ name: '', university: UNIVERSITIES[1], course: 'Computer Science / IT', district: '', skills: [], linkedinUrl: '' });
+  const [f, setF] = useState({ name: '', email: '', password: '', university: UNIVERSITIES[1], course: 'Computer Science / IT', district: '', skills: [], linkedinUrl: '' });
   const set = (k, v) => setF((x) => ({ ...x, [k]: v }));
 
   useEffect(() => { api('/users').then((d) => setDemo(d.users)).catch(() => {}); }, []);
@@ -39,6 +47,7 @@ export default function Welcome() {
         </div>
         <div className="stack">
           <button className="btn block" onClick={() => setStep('form')}>Mari Mulakan</button>
+                    <button className="btn soft block" onClick={() => { setTab('login'); setStep('form'); }}>Log masuk</button>
           <button className="btn soft block" onClick={() => { setTab('demo'); setStep('form'); }}>Cuba akaun demo</button>
         </div>
       </div>
@@ -57,6 +66,12 @@ export default function Welcome() {
         <form className="card stack" onSubmit={submit}>
           <h2 style={{ fontSize: 18 }}>Daftar (dapat 20 mata percuma)</h2>
           <label className="f">Nama<input className="in" required minLength={2} value={f.name} onChange={(e) => set('name', e.target.value)} autoComplete="name" /></label>
+          <label className="f">Emel
+  <input className="in" type="email" required autoComplete="email" value={f.email} onChange={(e) => set('email', e.target.value)} />
+</label>
+<label className="f">Kata laluan (minimum 8 aksara)
+  <input className="in" type="password" required minLength={8} autoComplete="new-password" value={f.password} onChange={(e) => set('password', e.target.value)} />
+</label>
           <label className="f">Institusi
             <select className="in" value={f.university} onChange={(e) => set('university', e.target.value)}>{UNIVERSITIES.map((u) => <option key={u}>{u}</option>)}</select>
           </label>
@@ -76,6 +91,16 @@ export default function Welcome() {
         </form>
       ) : (
         <div className="card stack">
+          <form className="card stack" onSubmit={submitLogin}>
+  <h2 style={{ fontSize: 18 }}>Log masuk</h2>
+  <label className="f">Emel
+    <input className="in" type="email" required autoComplete="email" value={login.email} onChange={(e) => setLogin({ ...login, email: e.target.value })} />
+  </label>
+  <label className="f">Kata laluan
+    <input className="in" type="password" required autoComplete="current-password" value={login.password} onChange={(e) => setLogin({ ...login, password: e.target.value })} />
+  </label>
+  <button className="btn block" disabled={busy}>{busy ? 'Sekejap…' : 'Log masuk'}</button>
+</form>
           <h2 style={{ fontSize: 16 }}>Pilih akaun demo</h2>
           {demo.map((u) => (
             <button key={u.id} className="btn ghost" style={{ justifyContent: 'space-between' }} onClick={() => enter(u.id)}>

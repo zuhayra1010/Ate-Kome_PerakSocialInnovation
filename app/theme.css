@@ -43,4 +43,6 @@
 
   /* ---------- BOTTOM MENU ---------- */
   --nav-bg: rgba(255, 255, 255, .94);
+
+  --sheet-bg: #ffffff;   /* popup panels: keep this solid, not transparent */
 }

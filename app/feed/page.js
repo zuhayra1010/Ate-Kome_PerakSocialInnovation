@@ -14,6 +14,7 @@ function Feed() {
   const qs = new URLSearchParams({ sort, ...(q && { q }), ...(cat && { category: cat }), ...(district && { district }) }).toString();
   const { data, loading, error, reload } = useApi('/events?' + qs);
 
+
   return (
     <>
       <header className="page-head"><div><h1>Aktiviti</h1><p className="sub">Sukarelawan di seluruh Perak</p></div></header>
@@ -30,10 +31,11 @@ function Feed() {
             <button className={sort === 'match' ? 'on' : ''} onClick={() => setSort('match')}>✨ Padan</button>
           </div>
         </div>
-        {loading && !data ? <Skeletons /> : error ? <ErrorBox msg={error} retry={reload} /> : data.events.length === 0 ? <Empty icon="🔍">Tiada aktiviti sepadan. Cuba tukar penapis.</Empty> : data.events.map((e) => <EventCard key={e.id} ev={e} />)}
+        {loading && !data ? <Skeletons /> : error ? <ErrorBox msg={error} retry={reload} /> : data.events.length === 0 ? <Empty icon="/icons/search.svg">Tiada aktiviti sepadan. Cuba tukar penapis.</Empty> : data.events.map((e) => <EventCard key={e.id} ev={e} />)}
       </div>
     </>
   );
 }
 
 export default function Page() { return <Suspense><Feed /></Suspense>; }
+

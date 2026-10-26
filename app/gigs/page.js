@@ -21,7 +21,7 @@ export default function Gigs() {
     <>
       <header className="page-head"><div><h1>Peluang</h1><p className="sub">Kerja sambilan disahkan berhampiran kampus</p></div></header>
       <OppTabs />
-      {loading ? <Skeletons /> : error ? <ErrorBox msg={error} retry={reload} /> : data.gigs.length === 0 ? <Empty icon="💼">Tiada kerja buat masa ini.</Empty> : (
+      {loading ? <Skeletons /> : error ? <ErrorBox msg={error} retry={reload} /> : data.gigs.length === 0 ? <Empty icon="/icons/kerja.svg">Tiada kerja buat masa ini.</Empty> : (
         <div className="stack">
           {data.gigs.map((g) => (
             <div key={g.id} className="card stack" style={{ gap: 8 }}>

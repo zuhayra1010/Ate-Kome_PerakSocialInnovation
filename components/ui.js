@@ -54,17 +54,32 @@ export const Skeletons = ({ n = 3 }) => (
 );
 
 export const Empty = ({ icon = '🌱', children }) => (
-  <div className="empty"><b aria-hidden>{icon}</b>{children}</div>
+  <div className="empty flex flex-col items-center justify-center p-8 text-center">
+    {/* Semak jika nilai icon mengandungi '/' (bermaksud ia adalah laluan fail seperti /icons/utama.svg) */}
+    {icon.includes('/') ? (
+      <img 
+        src={icon} 
+        alt="Ikon kosong" 
+        className="w-16 h-16 mb-2 grayscale opacity-50" 
+        aria-hidden="true"
+      />
+    ) : (
+      // Jika ia cuma emoji seperti 🌱, papar sebagai teks biasa
+      <b aria-hidden className="text-4xl mb-2 grayscale opacity-50">{icon}</b>
+    )}
+    
+    <div className="text-gray-500 mt-2">{children}</div>
+  </div>
 );
 
 export const ErrorBox = ({ msg, retry }) => (
   <div className="card" role="alert"><p>{msg}</p>{retry && <button className="btn soft sm" style={{ marginTop: 8 }} onClick={retry}>Cuba lagi</button>}</div>
 );
 
-export function EventCard({ ev, showReasons = true }) {
-  const cat = CATEGORIES[ev.category] || { label: ev.category, icon: '✨' };
+export function EventCard({ ev, showReasons = true, index = 0 }) {  const cat = CATEGORIES[ev.category] || { label: ev.category, icon: '' };
   const pct = Math.round((ev.filled / ev.slots) * 100);
   return (
+    
     <Link href={`/feed/${ev.id}`} className="card ev" style={{ position: 'relative' }}>
       <div className="row between">
         <span className="chip">{cat.icon} {cat.label}</span>
