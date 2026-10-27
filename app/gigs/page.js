@@ -30,7 +30,7 @@ export default function Gigs() {
               <p className="sub">{g.description}</p>
               <div className="meta"><span>📍 {g.nearCampus || g.district}</span><span>⏱ ~{g.hoursPerWeek} jam/minggu</span></div>
               <div className="row wrap">{g.tags.map((t) => <span key={t} className="chip">{TAGS[t] || t}</span>)}</div>
-              {g.match.reasons[0] && <p className="reason">✨ {g.match.reasons.join(' · ')}</p>}
+              {g.match.reasons[0] && <p className="reason"> {g.match.reasons.join(' · ')}</p>}
               {g.applied ? <span className="tag good" style={{ width: 'fit-content' }}>✔ Permohonan dihantar</span> : g.verified ? <button className="btn sm" disabled={busy === g.id} onClick={() => apply(g)}>Mohon</button> : <p className="sub">⚠️ Majikan belum disahkan. Permohonan dibuka selepas semakan.</p>}
             </div>
           ))}

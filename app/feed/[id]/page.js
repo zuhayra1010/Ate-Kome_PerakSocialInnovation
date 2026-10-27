@@ -42,7 +42,7 @@ export default function EventDetail() {
   if (ev.loading) return <div style={{ paddingTop: 40 }}><Skeletons /></div>;
   if (ev.error) return <div style={{ paddingTop: 40 }}><ErrorBox msg={ev.error} retry={ev.reload} /></div>;
   const e = ev.data.event;
-  const cat = CATEGORIES[e.category] || { label: e.category, icon: '✨' };
+  const cat = CATEGORIES[e.category] || { label: e.category, icon: '' };
   const refresh = () => Promise.all([ev.reload(), rides.reload(), me.reload()]);
 
   const act = async (fn, okMsg) => {
