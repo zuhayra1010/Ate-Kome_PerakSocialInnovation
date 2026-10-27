@@ -3,7 +3,7 @@
 ## A. Where to change things
 | I want to change... | Open this file | What to edit |
 |---|---|---|
-| **Logo** (login page) | `public/logo.svg` | Replace the file with your own SVG. Keep the name `logo.svg`. |
+| **Logo** (login page) | `/icons/logo.svg` | Replace the file with your own SVG. Keep the name `logo.svg`. |
 | **App icon** (home screen) | `public/icon.svg` | Replace the same way. |
 | **Colours, card look, font size, rounded corners** | `app/theme.css` | Everything is at the top, with comments. Change a value, save. |
 | **Font (e.g. Poppins)** | `app/layout.js` + `app/theme.css` | Follow the FONT comment in `layout.js`, then set `--font` in `theme.css`. |

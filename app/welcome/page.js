@@ -8,7 +8,7 @@ import { COURSES, DISTRICTS, TAGS, UNIVERSITIES } from '@/lib/constants';
 import { useToast } from '@/components/AppShell';
 
 // Put logo here
-const Logo = ({ w = 240 }) => <img src="/logo.svg" alt="Moh Siswa!" style={{ width: w, maxWidth: '80%', height: 'auto' }} />;
+const Logo = ({ w = 240 }) => <img src="/icons/logo.svg" alt="Moh Siswa!" style={{ width: w, maxWidth: '80%', height: 'auto' }} />;
 
 export default function Welcome() {
   const router = useRouter();
@@ -42,13 +42,12 @@ const submitLogin = async (e) => {
       <div style={{ minHeight: '100dvh', display: 'grid', gridTemplateRows: '1fr auto', textAlign: 'center', padding: 'env(safe-area-inset-top) 4px calc(28px + env(safe-area-inset-bottom))' }}>
         <div style={{ display: 'grid', placeItems: 'center', alignContent: 'center', gap: 18 }}>
           <Logo w={280} />
-          <h1 style={{ fontSize: 26, letterSpacing: '-.02em', fontWeight: 'var(--heading-weight)' }}>Moh jadi sukarelawan!</h1>
-          <p className="sub" style={{ maxWidth: 300, fontSize: 15 }}>Sukarelawan, tajaan, kerja sambilan dan ganjaran negeri untuk siswa IPT Perak.</p>
-        </div>
-        <div className="stack">
-          <button className="btn block" onClick={() => setStep('form')}>Mari Mulakan</button>
+           <button className="btn block" onClick={() => setStep('form')}>Mari Mulakan</button>
                     <button className="btn soft block" onClick={() => { setTab('login'); setStep('form'); }}>Log masuk</button>
           <button className="btn soft block" onClick={() => { setTab('demo'); setStep('form'); }}>Cuba akaun demo</button>
+        </div>
+        <div className="stack">
+
         </div>
       </div>
     );
