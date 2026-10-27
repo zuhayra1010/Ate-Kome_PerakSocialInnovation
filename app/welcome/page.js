@@ -44,7 +44,6 @@ const submitLogin = async (e) => {
           <Logo w={280} />
            <button className="btn block" onClick={() => setStep('form')}>Mari Mulakan</button>
                     <button className="btn soft block" onClick={() => { setTab('login'); setStep('form'); }}>Log masuk</button>
-          <button className="btn soft block" onClick={() => { setTab('demo'); setStep('form'); }}>Cuba akaun demo</button>
         </div>
         <div className="stack">
 
