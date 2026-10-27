@@ -126,7 +126,6 @@ export default function Home() {
   </Link>
   
   <Link href="/sponsors" className="chip flex items-center gap-2">
-    {/* Anda boleh tukar 'kolaborasi.svg' kepada ikon tajaan yang sebenar */}
     <img src="/icons/kolaborasi.svg" alt="Tajaan" className="w-5 h-5" />
     Cari tajaan
   </Link>

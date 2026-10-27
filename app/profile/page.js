@@ -70,6 +70,7 @@ export default function Profile() {
         <img src="/icons/resume.svg" alt="Ikon Resume" className="w-6 h-6" /> Resume Automatik </h2></div>
       <div className="card stack">
         <p className="sub">Rekod kokurikulum, lencana dan penarafan anda dalam satu PDF.</p>
+        <Link href="/resume" className="btn block">✏️ Isi / sunting maklumat resume</Link>
         <button className="btn block" disabled={busy} onClick={() => pdf('/resume', 'moh-siswa-resume.pdf')}>Muat turun resume (PDF)</button>
         {user.linkedinUrl ? <a className="btn soft block" href={user.linkedinUrl} target="_blank" rel="noopener noreferrer">Buka LinkedIn saya</a> : <button className="btn soft block" onClick={() => setEdit(true)}>Pautkan LinkedIn</button>}
         {badges.length > 0 && (
