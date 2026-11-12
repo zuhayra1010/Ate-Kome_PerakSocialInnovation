@@ -1,0 +1,48 @@
+
+  /* ===================================================================== */
+:root {
+  color-scheme: light;
+  /* ---------- FONT ----------
+     System font by default. To use a Google Font (e.g. Poppins):
+     1) open app/layout.js, 2) follow the "FONT" comment there,
+     3) then put:  --font: 'Poppins', system-ui, sans-serif;  */
+  --font: ui-rounded, 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-size: 15px;          /* normal text size */
+  --heading-weight: 800;      /* 600 = lighter headings, 800 = bold */
+ --bg: #f8f7f3; /* Warm, creamy off-white */
+  --surface: #ffffff; /* Clean white for cards */
+  --surface-2: #efeadb; /* Slightly darker cream for segments/chips */
+  
+  /* Text & Lines */
+  --ink: #1a1914; /* Deep, warm black/charcoal */
+  --muted: #737063; /* Warm gray for muted text */
+  --line: #e3dec9; /* Soft border color */
+  
+  /* Primary - Pastel Yellow */
+  --primary: #eadf7f; 
+  --primary-ink: #1a1914; /* Dark text for yellow buttons */
+  --primary-soft: #f6f3e1; /* Very light yellow for soft tags */
+  
+  /* Accents - Soft Olive */
+  --accent: #aeb588; 
+  --accent-ink: #1e2111;
+  
+  /* Status Colors (Muted to fit the pastel vibe) */
+  --good: #5f9e7d; --good-soft: #e3f0e9; 
+  --bad: #cf6b6b; --bad-soft: #fae8e8; 
+  --warn-soft: #fcf1d4; --warn: #967011;
+  
+  /* Elevation & Radius */
+  --shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  --r: 18px;
+
+  /* ---------- BUTTONS & INPUTS ---------- */
+  --btn-radius: 16px;
+  --btn-height: 46px;
+  --input-radius: 16px;
+
+  /* ---------- BOTTOM MENU ---------- */
+  --nav-bg: rgba(255, 255, 255, .94);
+
+  --sheet-bg: #ffffff;   /* popup panels: keep this solid, not transparent */
+}
